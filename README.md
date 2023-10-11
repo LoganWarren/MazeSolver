@@ -1,0 +1,1 @@
+# Maze Solver Project for Algorithms and Data Structures
