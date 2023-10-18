@@ -1,26 +1,30 @@
 # Maze Solver - CS 0445 Algorithms and Data Structures 1
-## Overview
-This project uses stacks and queues to explore and find paths through a maze. The primary aim is to understand and differentiate the traversal patterns of stacks and queues in a maze environment.
+## Overview:
 
-## Features
-- **Maze Representation:** Mazes are represented as 2D arrays with unique codes for paths, walls, start, and end points.
-- **Maze Solver:** An abstract superclass that contains the logic to solve the maze. Two concrete implementations, MazeSolverStack and MazeSolverQueue, represent the use of stacks and queues respectively.
-- **Visualization:** The MazeApp program provides a GUI interface to visualize the maze solving process in real-time.
+In this project, we leverage the power of stacks and queues to navigate and find a way through mazes. The application allows users to load different mazes and solve them using either a stack-based or queue-based approach, visualizing the pathfinding process.
 
-## How to Run
+### Features:
+- Load Mazes: Users can load custom mazes to test the solver's capabilities.
+- Two Solvers: Choose between a stack-based or queue-based approach to maze-solving.
+- Visualize Pathfinding: Watch the solver explore the maze in real-time, marking visited squares and highlighting the successful path.
 
-- Load a maze file using the load button.
-- Choose between stack and queue as your maze-solving strategy.
-- Use the step button to take one step at a time or the start button to run the animation.
+### Technical Implementation:
+- Maze Representation: Mazes are represented as 2D arrays made up of individual squares (either empty, wall, start, or exit).
+- Maze Loading: Custom mazes can be loaded from text files with specific formatting.
+- Solvers: Two concrete implementations of the abstract MazeSolver class: MazeSolverStack and MazeSolverQueue.
+- Data Structures: Custom implementations of stacks and queues, built on top of a simple linked list data structure.
 
-## Dependencies
+### Testing:
 
-- Java SE Development Kit
+JUnit tests are provided for various components, ensuring the robustness of the solvers and data structures.
+Getting Started:
+
+- Clone the repository.
+- Load the project into your preferred Java IDE.
+- Ensure the mazes folder is in the correct location to load mazes.
+- Run MazeApp.java to launch the application.
+- Load a maze and select a solver type to begin pathfinding.
+
+Dependencies:
+- Java SE Development Kit (JDK)
 - JUnit for testing
-
-## Testing
-Four JUnit test files are provided to validate the implementation:
-- MiniListTest.java
-- MyQueueTest.java
-- MyStackTest.java
-- MazeSolverTest.java
