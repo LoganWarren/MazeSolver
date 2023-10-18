@@ -34,14 +34,14 @@ abstract class MazeSolver {
      * this method makes a list of the squares on a path 
      * from the start square to the exit square
      */
-    private void buildPath (Square sq) {
-        this.path= new LinkedList<Square>();        
-        //TODO: your code here
+    private void buildPath(Square sq) {
+        this.path = new LinkedList<Square>();
         
-        // you can start with the finish square and use getPrevious() 
-        // to recover the path from start to finish.
-        // Recall that you can add in front of the list 
-        // to get the correct order of elements in the path
+        // Start with the finish square and traverse back to the start square
+        while (sq != null) {
+            this.path.add(0, sq);  // Add to the front to maintain the order
+            sq = sq.getPrevious();
+        }
     }
     
     public List<Square> getPath() {        
@@ -56,6 +56,26 @@ abstract class MazeSolver {
         }
         
         Square nextSquare = this.next();
-        // TODO: one step of the maze exploration algorithm
+        
+        // Check if the nextSquare is the exit
+        if (nextSquare.getType() == Square.EXIT) {
+            this.pathFound = true;
+            this.finished = true;
+            buildPath(nextSquare);
+            return;
+        }
+        
+        // Get neighbors of the current square
+        ArrayList<Square> neighbors = maze.getNeighbors(nextSquare);
+        
+        // Add unmarked neighbors to the worklist and mark them
+        for (Square neighbor : neighbors) {
+            if (!neighbor.isMarked() && neighbor.getType() != Square.WALL) {
+                neighbor.setPrevious(nextSquare);
+                neighbor.mark();
+                this.add(neighbor);
+            }
+        }
     }
+    
 }

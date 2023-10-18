@@ -109,12 +109,12 @@ public class Maze {
             ArrayList<Square> neighbors = new ArrayList<Square>();
             if (row > 0)
                 neighbors.add(grid[row - 1][col]);
-            if (col + 1 < getWidth())
-                neighbors.add(grid[row][col + 1]);
-            if (row + 1 < getHeight())
-                neighbors.add(grid[row + 1][col]);
             if (col > 0)
                 neighbors.add(grid[row][col - 1]);
+            if (row + 1 < getHeight())
+                neighbors.add(grid[row + 1][col]);
+            if (col + 1 < getWidth())
+                neighbors.add(grid[row][col + 1]);       
             return neighbors;
         } else
             return null;

@@ -280,11 +280,11 @@ public class MazeApp extends JFrame implements ActionListener {
      * Builds a new MazeSolver of the type displayed on the button.
      */
     private void makeNewSolver() {
-        //uncomment this part after you implement two solvers
-//    	if (solverType == MazeSolver.STACK) {
-//            solver = new MazeSolverStack(this.maze);
-//        } else 
-//            solver = new MazeSolverQueue(this.maze);
+       // uncomment this part after you implement two solvers
+    	if (solverType == MazeSolver.STACK) {
+            solver = new MazeSolverStack(this.maze);
+        } else 
+            solver = new MazeSolverQueue(this.maze);
     }
 
     /**

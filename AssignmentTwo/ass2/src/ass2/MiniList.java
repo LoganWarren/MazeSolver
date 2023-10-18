@@ -23,12 +23,14 @@ public class MiniList<E>
     private Node head;
     private Node tail;
     
+
 	public E getFirst() {
 		if (isEmpty()) {
 			throw new NoSuchElementException();
 		}
 		return head.data;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -41,6 +43,7 @@ public class MiniList<E>
 		}
 		return sb.toString();
 	}
+
 
     public MiniList()
     {
