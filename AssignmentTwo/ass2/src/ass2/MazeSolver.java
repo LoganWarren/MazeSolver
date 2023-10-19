@@ -40,6 +40,7 @@ abstract class MazeSolver {
         // Start with the finish square and traverse back to the start square
         while (sq != null) {
             this.path.add(0, sq);  // Add to the front to maintain the order
+            sq.setOnPath(); // Mark the square as being on the solution path
             sq = sq.getPrevious();
         }
     }

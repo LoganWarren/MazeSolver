@@ -225,6 +225,7 @@ public class MazeApp extends JFrame implements ActionListener {
      * Allow the user to change the timer interval.
      */
     private void doTimer() {
+        System.out.println("Timer interval updated to: " + timerInterval);
         int newValue = -1;
         try {
             newValue = Integer.parseInt(timerField.getText());
@@ -236,7 +237,7 @@ public class MazeApp extends JFrame implements ActionListener {
             timerField.setText(Integer.toString(timerInterval));
             timer.setDelay(timerInterval);
         }
-    }
+    }    
 
     /**
      * Allow the user to quit via button.
@@ -305,7 +306,7 @@ public class MazeApp extends JFrame implements ActionListener {
             timer.stop();
         }
     }
-
+    
     /**
      * Load a maze file into the solver.
      */
@@ -373,7 +374,7 @@ public class MazeApp extends JFrame implements ActionListener {
      */
     private void updateMaze() {
         if (mazeLoaded) { // leave blank until first maze is loaded
-
+    
             // update the path
             if (solver.pathFound()) {
                 java.util.List<Square> path = solver.getPath();
@@ -397,6 +398,7 @@ public class MazeApp extends JFrame implements ActionListener {
             maze.draw(mazeDisplay.getGraphics(), mazeDisplay.getSize());
         }
     }
+    
     
     //converts the Path array to string - used for testing
     public static String pathToString (java.util.List<Square> path) {
