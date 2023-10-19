@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "ass2",
+			"path": "C:/Users/logan/Downloads/AssignmentTwo/ass2"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"src"
+		],
+		"java.project.outputPath": "bin",
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar"
+		]
+	}
+}
